@@ -1,0 +1,55 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="580" Width="500">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Background" Value="Tan"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="MinWidth" Value="220"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="Background" Value="RosyBrown"></Setter>
+            <Setter Property="Foreground" Value="DarkRed"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Margin" Value="20,10"></Setter>
+            <Setter Property="Padding" Value="10"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="LightSteelBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0">IP адреса:</Label>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="ipAddressTB"></TextBox>
+        <Label Grid.Row="1" Grid.Column="0">Порт:</Label>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="portTB"></TextBox>
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Name="connectButton" Click="connectButton_Click">Підключитися</Button>
+        <Label Grid.Row="3" Grid.Column="0" FontSize="20">Введіть повідомленя:</Label>
+        <TextBox Grid.Row="4" Grid.Column="0" Height="205" FontSize="20" Name="messageTB"></TextBox>
+        <Label Grid.Row="3" Grid.Column="1" FontSize="20">Відповідь сервера:</Label>
+        <TextBlock Grid.Row="4" Grid.Column="1" Background="WhiteSmoke" Margin="10" FontSize="20" Name="answerTB"></TextBlock>
+        <Button Grid.Row="5" Grid.ColumnSpan="2" Name="sendMessageButton" Click="sendMessageButton_Click">Надіслати повідомлення</Button>
+    </Grid>
+</Window>
